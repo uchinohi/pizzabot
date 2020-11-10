@@ -1,0 +1,78 @@
+version: "2.0"
+
+stories:
+
+- story: happy path 1 multi-intent
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: pizza_form
+  - active_loop: pizza_form
+  - active_loop: null
+  - action: utter_happy
+  - intent: thanks+goodbye
+  - action: utter_thanks+goodbye
+  - action: action_listen
+
+
+- story: happy path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: pizza_form
+  - active_loop: pizza_form
+  - active_loop: null
+  - action: utter_happy
+  - intent: thanks
+  - action: utter_welcome
+  - intent: goodbye
+  - action: utter_goodbye
+  - action: action_listen
+
+- story: sad path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: deny
+  - action: utter_goodbye
+  - action: action_listen
+
+- story: User interrupts the form and doesn't want to continue
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: pizza_form
+  - active_loop: pizza_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: deny
+  - action: action_deactivate_loop
+  - active_loop: null
+  - action: utter_goodbye
+
+- story: User interrupts the form and wants to continue
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: affirm
+  - action: pizza_form
+  - active_loop: pizza_form
+  - intent: stop
+  - action: utter_ask_continue
+  - intent: affirm
+  - action: pizza_form
+  - active_loop: null
+  - action: utter_happy
+  - intent: thanks+goodbye
+  - action: utter_welcome
+  - action: utter_goodbye
+  - action: action_listen
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: chitchat
+  - action: action_test

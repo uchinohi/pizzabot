@@ -1,0 +1,78 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- chitchat
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- order_pizza
+- inform
+- thanks
+- stop
+- thanks+goodbye
+entities:
+- location
+- pizza_type
+slots:
+  location:
+    type: unfeaturized
+    influence_conversation: false
+  pizza_type:
+    type: unfeaturized
+    influence_conversation: false
+  requested_slot:
+    type: text
+    influence_conversation: false
+responses:
+  utter_greet:
+  - text: Hey! I am pizza bot. I can help you order a pizza. Want one?
+  - text: Hello there! Pizza bot here. Can I get you a pizza?
+  utter_cheer_up:
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_ask_pizza_type:
+  - text: What kind of pizza do you want?
+  - text: What pizza?
+  utter_ask_location:
+  - text: Where do you want the pizza?
+  - text: Where should I deliver it?
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, hold your hunger! {pizza_type} will be delivered ASAP!
+  - text: '{pizza_type} coming soon!'
+  utter_welcome:
+  - text: You're welcome.
+  - text: My pleasure!
+  utter_chitchat:
+  - text: Okay sure, but can we get back to pizzas?
+  - text: I can only get you pizzas!
+  utter_thanks+goodbye:
+  - text: Most welcome, talk to you later!
+  - text: No problem, bye bye!
+  utter_goodbye:
+  - text: Bye! Take care!
+  - text: Goodbye, have a nice day!
+  utter_ask_continue:
+  - text: Do you not want to continue ordering your pizza? :(
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- action_test
+- utter_greet
+forms:
+  pizza_form:
+    pizza_type:
+    - type: from_entity
+      entity: pizza_type
+      intent: inform
+    location:
+    - type: from_entity
+      entity: location
+      intent: inform
+version: '2.0'

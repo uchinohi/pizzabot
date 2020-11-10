@@ -1,0 +1,147 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - thank you very much
+    - thank u
+    - cool
+    - great
+    - lovely!
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+    - ok
+- intent: order_pizza
+  examples: |
+    - I want a to order a pizza
+    - I want a pizza
+    - I wish to have a pizza
+    - I am craving for a pizza right now
+    - Can I have a pizza delivered?
+    - Get me a pizza will ya?
+    - I am hungry, order a pizza
+- intent: inform
+  examples: |
+    - [Large cheese burst pizza](pizza_type)
+    - [Veg pizza](pizza_type)
+    - [small pepperoni pizza](pizza_type)
+    - [Farmhouse](pizza_type)
+    - [Medium chicken pizza](pizza_type)
+    - [Margherita pizza](pizza_type) in [Girish Park](location)
+    - [Small nion pizza](pizza_type) in [Saltlake](location)
+    - [Chicken keema pizza](pizza_type) in [Bhawanipore](location)
+    - [Large thin crust pizza](pizza_type) in [Bagbazar](location)
+    - [Three cheese pizza](pizza_type) in [Kumartuli](location)
+    - It is [Sovabazar](location)
+    - [Dum Dum](location)
+    - Yeah, [Sector 5](location)
+    - [College Street](location)
+    - I am in [Jadavpur](location)
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - sure
+    - yeah
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: stop
+  examples: |
+    - Stop!
+    - I dont want
+    - don't
+    - Shut up!
+    - Please stop
+- intent: chitchat
+  examples: |
+    - What's the weather?
+    - give me a discount
+    - You are an idiot
+    - i love this person
+    - Real Madrid suck
+    - how are you?
+    - what is this shit?
+    - damn you
+- intent: thanks+goodbye
+  examples: |
+    - ok cool bye
+    - thanks bye
+    - tata and thank you
+    - awesome cya
+    - nice thanks bye
